@@ -1,22 +1,29 @@
 .form-label,
 .form-control {
-  font-size: 20px;
-  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-family: 'Trebuchet MS', sans-serif;
   padding-top: 5PX;
 }
 
 .form-header {
-  margin-left: 120px;
   margin-top: 60px;
-  margin-bottom: 50PX;
+  margin-bottom: 50px;
   font-family: 'Trebuchet MS', sans-serif;
+  
+}
+
+.register-header-div{
+    /* align center */
+    align-content: center;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
 .register-div {
   max-width: 450px;
   padding-left: 30px;
   padding-right: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     padding-top: 10px;
   background: rgb(236, 236, 236);
   border-radius: 25px;
@@ -25,9 +32,15 @@
 
 .register-button {
   margin-top: 40px;
-  margin-left: 140px;
+  margin-left: 150px;
   margin-bottom: 40px;
   font-size: 20px;
+  background: #9c212b5d;
+}
+
+.register-button:hover {
+  background: #631616b4;
+  color: white;
 }
 
 .header-div{
@@ -39,11 +52,27 @@
 
 .header-title{
     color: white;
-    font-size: 30px;
+    font-size: 25px;
     font-family: 'Trebuchet MS', sans-serif;
-    margin-left: 0px;
+    margin-left: 20px;
 }
 
 .header-container{
     min-width: 100%;
+}
+
+.header-auth-button{
+    margin-top: 10px;
+    margin-right: 20px;
+    float: right;
+    font-size: 17px;
+    font-weight: 500;
+    color: rgb(26, 95, 136);
+    background: #ee9222;
+    margin-top: 0px;
+
+}
+.header-auth-button:hover{
+    background: #ffc163;
+    color: rgba(71, 43, 43, 0.616);
 }

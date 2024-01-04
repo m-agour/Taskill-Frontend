@@ -1,15 +1,18 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 import Header from '../components/Header'
 import RegisterForm from '../components/RegisterForm';
 
 const RegisterPage = () => {
-  const handleButtonClick = () => {
-    // Handle navigation or state change to go to the Login page
-  };
+    const history = useHistory();
+
+    const handleButtonClick = () => {
+      history.push('/login');
+    };
 
   return (
     <div>
-      <Header title="Register" isLoginPage={false} onButtonClick={handleButtonClick} />
+      <Header title="Taskill" isLoginPage={false} onButtonClick={handleButtonClick} />
       <RegisterForm />
     </div>
   );

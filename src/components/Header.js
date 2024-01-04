@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
 
-const Header = ({ title, isLoginPage, onButtonClick }) => {
+const Header = ({ title, isLoginPage, onButtonClick}) => {
   const buttonText = isLoginPage ? 'Register' : 'Login';
 
   return (
@@ -24,7 +24,7 @@ const Header = ({ title, isLoginPage, onButtonClick }) => {
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <button onClick={onButtonClick} className="btn btn-outline-primary">
+              <button onClick={onButtonClick} className="btn header-auth-button">
                 {buttonText}
               </button>
             </li>

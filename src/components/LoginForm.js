@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import FormInput from './FormInput';
-import { register } from '../services/authService'; // Adjust the path accordingly
+import { login } from '../services/authService';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
 
-const RegisterForm = () => {
+const LoginForm = () => {
   const [formData, setFormData] = useState({
-    first_name: '',
-    last_name: '',
     email: '',
     password: '',
   });
@@ -24,10 +22,10 @@ const RegisterForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await register(formData);
-      console.log('Registration successful:', response);
+      const response = await login(formData);
+      console.log('Login successful:', response);
     } catch (error) {
-      console.error('Registration error:', error);
+      console.error('Login error:', error);
     }
   };
 
@@ -35,28 +33,10 @@ const RegisterForm = () => {
     <div className="container">
 
       <div className="container mt-5 register-div">
-      <div className="register-header-div">
-          <h2 className='form-header'> Register</h2>
+        <div className="register-header-div">
+          <h2 className='form-header'> Login</h2>
         </div>
         <form onSubmit={handleSubmit}>
-        <FormInput
-            label="First Name"
-            type="text"
-            id="first_name"
-            name="first_name"
-            value={formData.first_name}
-            onChange={handleChange}
-            required
-          />
-          <FormInput
-            label="Last Name"
-            type="text"
-            id="last_name"
-            name="last_name"
-            value={formData.last_name}
-            onChange={handleChange}
-            required
-          />
           <FormInput
             label="Email"
             type="email"
@@ -76,7 +56,7 @@ const RegisterForm = () => {
             required
           />
           <button type="submit" className="btn register-button">
-            Register
+            Login
           </button>
         </form>
       </div>
@@ -84,4 +64,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm;
+export default LoginForm;
