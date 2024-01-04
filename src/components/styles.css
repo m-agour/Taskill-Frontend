@@ -1,0 +1,49 @@
+.form-label,
+.form-control {
+  font-size: 20px;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 5PX;
+}
+
+.form-header {
+  margin-left: 120px;
+  margin-top: 60px;
+  margin-bottom: 50PX;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.register-div {
+  max-width: 450px;
+  padding-left: 30px;
+  padding-right: 30px;
+    padding-bottom: 30px;
+    padding-top: 10px;
+  background: rgb(236, 236, 236);
+  border-radius: 25px;
+  background: #ee922215;
+}
+
+.register-button {
+  margin-top: 40px;
+  margin-left: 140px;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+.header-div{
+    background: #219C90;
+    padding: 10px;
+    margin-bottom: 80px;
+
+}
+
+.header-title{
+    color: white;
+    font-size: 30px;
+    font-family: 'Trebuchet MS', sans-serif;
+    margin-left: 0px;
+}
+
+.header-container{
+    min-width: 100%;
+}
