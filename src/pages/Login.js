@@ -12,7 +12,7 @@ const LoginPage = () => {
 
   return (
     <div>
-      <Header title="Taskill" isLoginPage={true} onButtonClick={handleButtonClick} />
+      <Header title="Taskill" buttonText="Register" onButtonClick={handleButtonClick} />
       <LoginForm />
     </div>
   );

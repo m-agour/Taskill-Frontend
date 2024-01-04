@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 import FormInput from './FormInput';
 import { login } from '../services/authService';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -6,6 +7,7 @@ import './styles.css';
 
 
 const LoginForm = () => {
+  const history = useHistory();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -24,6 +26,7 @@ const LoginForm = () => {
     try {
       const response = await login(formData);
       console.log('Login successful:', response);
+      history.push('/dashboard');
     } catch (error) {
       console.error('Login error:', error);
     }

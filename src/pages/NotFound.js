@@ -1,14 +1,11 @@
 import React from 'react';
 import Header from '../components/Header'
 
-const NotFoundPage = () => {
-  const handleButtonClick = () => {
-    // Handle navigation or state change to go to the Login page
-  };
 
+const NotFoundPage = () => {
   return (
     <div>
-      <Header title="Taskill" isLoginPage={false} onButtonClick={handleButtonClick} />
+      <Header title="Taskill" noButton="yes" />
 
         <div className="container">
             <div className="container mt-5 register-div">

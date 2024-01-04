@@ -12,7 +12,7 @@ const RegisterPage = () => {
 
   return (
     <div>
-      <Header title="Taskill" isLoginPage={false} onButtonClick={handleButtonClick} />
+      <Header title="Taskill" buttonText="Login" onButtonClick={handleButtonClick} />
       <RegisterForm />
     </div>
   );

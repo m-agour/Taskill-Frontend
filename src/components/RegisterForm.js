@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 import FormInput from './FormInput';
 import { register } from '../services/authService'; // Adjust the path accordingly
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -6,6 +7,7 @@ import './styles.css';
 
 
 const RegisterForm = () => {
+  const history = useHistory();
   const [formData, setFormData] = useState({
     first_name: '',
     last_name: '',
@@ -26,6 +28,8 @@ const RegisterForm = () => {
     try {
       const response = await register(formData);
       console.log('Registration successful:', response);
+      history.push('/dashboard');
+
     } catch (error) {
       console.error('Registration error:', error);
     }

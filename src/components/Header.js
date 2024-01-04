@@ -1,10 +1,11 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
+import { logout } from '../services/authService';
 
 
-const Header = ({ title, isLoginPage, onButtonClick}) => {
-  const buttonText = isLoginPage ? 'Register' : 'Login';
+const Header = ({ title, buttonText="Logout", onButtonClick=logout, noButton=false}) => {
+
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light, header-div">
@@ -24,9 +25,11 @@ const Header = ({ title, isLoginPage, onButtonClick}) => {
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <button onClick={onButtonClick} className="btn header-auth-button">
-                {buttonText}
-              </button>
+                {noButton ? null :               
+                    <button onClick={onButtonClick} className="btn header-auth-button">
+                        {buttonText}
+                    </button>
+                }
             </li>
           </ul>
         </div>

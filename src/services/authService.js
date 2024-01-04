@@ -2,6 +2,7 @@ import axios from 'axios';
 import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
 import Cookies from 'js-cookie';
+import { getToast } from './utils';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -31,23 +32,14 @@ const register = async (userData) => {
     const response = await axios.post(`${API_URL}/register/`, userData);
     if (response.status === 201) {
         setUserData(response.data);
+        getToast('Registration successful').showToast();
         return response.data;
     }
   } catch (error) {
     console.error('Registration failed:', error.response.data);
     let errors = error.response.data;
     for (const [key, value] of Object.entries(errors)) {
-        Toastify({
-        text: `${value}`,      
-        duration: 3000,
-        gravity: "bottom",
-        position: "right",
-        gravity: "bottom",
-        stopOnFocus: true,
-        style: {
-            background: "linear-gradient(to right, #00b09b, #96c93d)",
-        },
-        }).showToast();
+
     }
   }
 };
@@ -57,6 +49,7 @@ const login = async (userData) => {
         const response = await axios.post(`${API_URL}/login/`, userData);
         if (response.status === 200) {
             setUserData(response.data);
+            getToast('Login successful').showToast();
         }
         return response.data;
         
@@ -64,19 +57,35 @@ const login = async (userData) => {
         console.error('Login failed:', error.response.data);
         let errors = error.response.data;
         for (const [key, value] of Object.entries(errors)) {
-            Toastify({
-            text: `${value}`,      
-            duration: 3000,
-            gravity: "bottom",
-            position: "right",
-            gravity: "bottom",
-            stopOnFocus: true,
-            style: {
-                background: "linear-gradient(to right, #00b09b, #96c93d)",
-            },
-            }).showToast();
+            getToast(`${value}`, error=true).showToast();
         }
     }
     }
 
-export { register, login };
+const isloggedIn = () => {
+    try {
+        let user_data = Cookies.get('user');
+        if (user_data) {
+            return true;
+        }
+        return false;
+    } catch (error) {
+        return false;
+    }
+}
+
+const getToken = () => {
+    let user_data = Cookies.get('user');
+    if (user_data) {
+        return JSON.parse(user_data).token;
+    }
+    return null;
+}
+
+const logout = () => {
+    console.log('logout');
+    Cookies.remove('user');
+    window.location.href = '/';
+}
+
+export { register, login , isloggedIn, getToken, getUserData, logout };
