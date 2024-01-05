@@ -20,7 +20,7 @@ const setUserData = (data) => {
 }
 
 const getUserData = () => {
-    let user_data = Cookies.get('user_data');
+    let user_data = Cookies.get('user');
     if (user_data) {
         return JSON.parse(user_data);
     }

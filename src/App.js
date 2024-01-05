@@ -5,6 +5,7 @@ import LoginPage from './pages/Login';
 import NotFoundPage from './pages/NotFound'
 import { Redirect } from 'react-router-dom';
 import { isloggedIn } from './services/authService';
+import DashboardPage from './pages/Dashboard';
 
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
         <Route
           exact
           path="/dashboard"
-          render={() => (isloggedIn() ? <NotFoundPage /> : <Redirect to="/login" />)}
+          render={() => (isloggedIn() ? <DashboardPage /> : <Redirect to="/login" />)}
         />
         <Route component={NotFoundPage} /> {/* This acts as a 404 page */}
       </Switch>

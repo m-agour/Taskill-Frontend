@@ -34,7 +34,7 @@
   margin-top: 40px;
   margin-left: 150px;
   margin-bottom: 40px;
-  font-size: 20px;
+  font-size: 25px;
   background: #9c212b5d;
 }
 
@@ -75,4 +75,28 @@
 .header-auth-button:hover{
     background: #ffc163;
     color: rgba(71, 43, 43, 0.616);
+}
+
+.arrow{
+    color: rgb(0, 0, 31);
+}
+
+.arrow:hover{
+    color: rgb(18, 18, 190);
+}
+
+.trash{
+    color: rgb(0, 0, 0);
+}
+
+.trash:hover{
+    color: rgb(236, 0, 0);
+}
+
+.status-icon{
+    color: rgb(0, 0, 0);
+}
+
+.status-icon:hover{
+    color: rgb(0, 0, 255);
 }
