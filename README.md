@@ -27,27 +27,24 @@ Installation
 ------------
 
 1. Clone the repository:
-
-   .. code-block:: bash
-
-      git clone https://github.com/your-username/taskill-dashboard.git
+```
+git clone https://github.com/your-username/taskill-dashboard.git
+```
 
 2. Install dependencies:
 
-   .. code-block:: bash
-
-      cd taskill-dashboard
-      npm install
-
+```
+cd taskill-dashboard
+npm install
+```
 Usage
 -----
 
 1. Run the application:
 
-   .. code-block:: bash
-
-      npm start
-
+```
+npm start
+```
 2. Access the Taskill Dashboard via your browser at `http://localhost:3000`.
 
 Contributing
