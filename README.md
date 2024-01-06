@@ -3,7 +3,8 @@ Taskill Dashboard
 
 Taskill Dashboard is a web application designed to manage tasks efficiently. This project allows users to create, track, and update tasks conveniently, offering a seamless experience for task management.
 
-![image](https://github.com/m-agour/Taskill-Frontent/assets/63170874/afa68001-0efa-4a0b-9ce0-8508239f52d9)
+![image](https://github.com/m-agour/Taskill-Frontent/assets/63170874/372ae34f-5e13-4ca2-9763-41d4ec84e3b1)
+
 
 
 Features
