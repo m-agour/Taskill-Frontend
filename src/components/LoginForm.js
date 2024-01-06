@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import FormInput from './FormInput';
-import { login } from '../services/authService';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles.css';
-
+import FormInput from "./FormInput";
+import { login } from "../services/authService";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles.css";
 
 const LoginForm = () => {
   const history = useHistory();
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
 
   const handleChange = (e) => {
@@ -24,20 +23,18 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await login(formData);
-      console.log('Login successful:', response);
-      history.push('/dashboard');
+      const res = await login(formData);
+      if (res) window.location.reload();
     } catch (error) {
-      console.error('Login error:', error);
+      console.error("Login error:", error);
     }
   };
 
   return (
     <div className="container">
-
       <div className="container mt-5 register-div">
         <div className="register-header-div">
-          <h2 className='form-header'> Login</h2>
+          <h2 className="form-header"> Login</h2>
         </div>
         <form onSubmit={handleSubmit}>
           <FormInput

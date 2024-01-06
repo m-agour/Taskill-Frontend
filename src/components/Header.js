@@ -1,16 +1,29 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles.css';
-import { logout } from '../services/authService';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles.css";
+import { logout } from "../services/authService";
 
-
-const Header = ({ title, buttonText="Logout", onButtonClick=logout, noButton=false}) => {
-
-
+const Header = ({
+  title,
+  buttonText = "Logout",
+  onButtonClick = logout,
+  noButton = false,
+}) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light, header-div">
       <div className="container header-container">
-        <a className="navbar-brand header-title" href="/">{title}</a>
+        <a
+          className="navbar-brand header-title"
+          href="/"
+          style={{
+            color: "white",
+            fontSize: "25px",
+            fontFamily: "'Trebuchet MS', sans-serif",
+            marginLeft: "20px",
+          }}
+        >
+          {title}
+        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -22,14 +35,20 @@ const Header = ({ title, buttonText="Logout", onButtonClick=logout, noButton=fal
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <div
+          className="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
           <ul className="navbar-nav">
             <li className="nav-item">
-                {noButton ? null :               
-                    <button onClick={onButtonClick} className="btn header-auth-button">
-                        {buttonText}
-                    </button>
-                }
+              {noButton ? null : (
+                <button
+                  onClick={onButtonClick}
+                  className="header-auth-button"
+                >
+                  {buttonText}
+                </button>
+              )}
             </li>
           </ul>
         </div>

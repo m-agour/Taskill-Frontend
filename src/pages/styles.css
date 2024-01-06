@@ -1,0 +1,19 @@
+.create-task-button {
+    margin-top: 10px;
+    margin-left: 20px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: #2D3250; /* Green background color */
+    color: #F6B17A; /* White text color */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .create-task-button:hover {
+    background-color: #7077A1; /* Darker green on hover */
+    color: #F6B17A; /* Darker text color on hover */
+  }
+  

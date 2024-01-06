@@ -1,5 +1,5 @@
-import React from 'react';
-import './styles.css'
+import React from "react";
+import "./styles.css";
 
 const FormInput = ({ label, type, id, name, value, onChange, required }) => {
   return (

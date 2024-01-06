@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import FormInput from './FormInput';
-import { register } from '../services/authService'; // Adjust the path accordingly
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles.css';
-
+import FormInput from "./FormInput";
+import { register } from "../services/authService"; // Adjust the path accordingly
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles.css";
 
 const RegisterForm = () => {
   const history = useHistory();
   const [formData, setFormData] = useState({
-    first_name: '',
-    last_name: '',
-    email: '',
-    password: '',
+    first_name: "",
+    last_name: "",
+    email: "",
+    password: "",
   });
 
   const handleChange = (e) => {
@@ -26,24 +25,21 @@ const RegisterForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await register(formData);
-      console.log('Registration successful:', response);
-      history.push('/dashboard');
-
+      let res = await register(formData);
+      if(res) window.location.reload();
     } catch (error) {
-      console.error('Registration error:', error);
+      console.error("Registration error:", error);
     }
   };
 
   return (
     <div className="container">
-
       <div className="container mt-5 register-div">
-      <div className="register-header-div">
-          <h2 className='form-header'> Register</h2>
+        <div className="register-header-div">
+          <h2 className="form-header"> Register</h2>
         </div>
         <form onSubmit={handleSubmit}>
-        <FormInput
+          <FormInput
             label="First Name"
             type="text"
             id="first_name"

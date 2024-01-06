@@ -1,30 +1,29 @@
 .form-label,
 .form-control {
   font-size: 16px;
-  font-family: 'Trebuchet MS', sans-serif;
-  padding-top: 5PX;
+  font-family: "Trebuchet MS", sans-serif;
+  padding-top: 5px;
 }
 
 .form-header {
   margin-top: 60px;
   margin-bottom: 50px;
-  font-family: 'Trebuchet MS', sans-serif;
-  
+  font-family: "Trebuchet MS", sans-serif;
 }
 
-.register-header-div{
-    /* align center */
-    align-content: center;
-    text-align: center;
-    margin-bottom: 50px;
+.register-header-div {
+  /* align center */
+  align-content: center;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .register-div {
   max-width: 450px;
   padding-left: 30px;
   padding-right: 30px;
-    padding-bottom: 20px;
-    padding-top: 10px;
+  padding-bottom: 20px;
+  padding-top: 10px;
   background: rgb(236, 236, 236);
   border-radius: 25px;
   background: #ee922215;
@@ -43,60 +42,111 @@
   color: white;
 }
 
-.header-div{
-    background: #219C90;
-    padding: 10px;
-    margin-bottom: 80px;
-
+.header-div {
+  background: #219c90;
+  padding: 10px;
+  margin-bottom: 80px;
 }
 
-.header-title{
-    color: white;
-    font-size: 25px;
-    font-family: 'Trebuchet MS', sans-serif;
-    margin-left: 20px;
+.header-title {
+  color: white;
+  font-size: 25px;
+  font-family: "Trebuchet MS", sans-serif;
+  margin-left: 20px;
 }
 
-.header-container{
-    min-width: 100%;
+.header-container {
+  min-width: 100%;
 }
 
-.header-auth-button{
-    margin-top: 10px;
-    margin-right: 20px;
-    float: right;
-    font-size: 17px;
-    font-weight: 500;
-    color: rgb(26, 95, 136);
-    background: #ee9222;
-    margin-top: 0px;
+.header-auth-button {
+  margin-top: 7px;
+  margin-right: 20px;
+  float: right;
+  font-size: 17px;
+  font-weight: 500;
+  color: rgb(26, 95, 136);
+  background: #ee9222;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
 
-}
-.header-auth-button:hover{
-    background: #ffc163;
-    color: rgba(71, 43, 43, 0.616);
-}
-
-.arrow{
-    color: rgb(0, 0, 31);
+ 
 }
 
-.arrow:hover{
-    color: rgb(18, 18, 190);
+.header-auth-button:hover {
+  background: #ffd79c;
+  color: rgba(71, 43, 43, 0.616);
 }
 
-.trash{
-    color: rgb(0, 0, 0);
+
+.arrow {
+  color: rgb(0, 0, 31);
 }
 
-.trash:hover{
-    color: rgb(236, 0, 0);
+.arrow:hover {
+  color: rgb(18, 18, 190);
 }
 
-.status-icon{
-    color: rgb(0, 0, 0);
+.trash {
+  color: rgb(0, 0, 0);
 }
 
-.status-icon:hover{
-    color: rgb(0, 0, 255);
+.trash:hover {
+  color: rgb(236, 0, 0);
+}
+
+.status-icon {
+  color: rgb(0, 0, 0);
+}
+
+.status-icon:hover {
+  color: rgb(0, 0, 255);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity to control the blur effect */
+  backdrop-filter: blur(5px); /* Adjust the blur amount as needed */
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-body {
+  /* background-color:antiquewhite; */
+  /* Add other styles as needed */
+}
+
+.new-task-button {
+  margin-top: -30px;
+  margin-left: 20px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.bi-plus-circle-fill {
+  font-size: 1.5rem;
+}
+
+.creat-task-button {
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.creat-task-button:hover {
+  background: #ffd79c;
+  color: rgba(71, 43, 43, 0.616);
 }
