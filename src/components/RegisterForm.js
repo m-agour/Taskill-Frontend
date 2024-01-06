@@ -26,7 +26,7 @@ const RegisterForm = () => {
     e.preventDefault();
     try {
       let res = await register(formData);
-      if(res) window.location.reload();
+      if (res) window.location.reload();
     } catch (error) {
       console.error("Registration error:", error);
     }

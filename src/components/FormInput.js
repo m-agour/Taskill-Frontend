@@ -3,7 +3,7 @@ import "./styles.css";
 
 const FormInput = ({ label, type, id, name, value, onChange, required }) => {
   return (
-    <div className="mb-3">
+    <div className="mb-3 form-text">
       <label htmlFor={id} className="form-label">
         {label}
       </label>
