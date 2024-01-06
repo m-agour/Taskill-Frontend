@@ -18,10 +18,10 @@ Features
 Table of Contents
 -----------------
 
-- :ref:`Installation`
-- :ref:`Usage`
-- :ref:`Contributing`
-- :ref:`License`
+- `Installation`
+- `Usage`
+- `Contributing`
+- `License`
 
 Installation
 ------------
