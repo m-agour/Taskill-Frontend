@@ -10,9 +10,18 @@ import {
 import { formatTime } from "../services/utils";
 import "./styles.css";
 
-const TaskCard = ({task, fetcher, updateTask, tasksData, setTasksData,  isAnyRunning, runningTask, setRunningTask}) => {
-  
-  let { title, time_spent, priority, status, id, clock_in_time, is_running } = task;
+const TaskCard = ({
+  task,
+  fetcher,
+  updateTask,
+  tasksData,
+  setTasksData,
+  isAnyRunning,
+  runningTask,
+  setRunningTask,
+}) => {
+  let { title, time_spent, priority, status, id, clock_in_time, is_running } =
+    task;
   const [currentPriority, setCurrentPriority] = useState(priority);
   const [isRunning, setIsRunning] = useState(Boolean(clock_in_time));
   const [startTime, setStartTime] = useState(new Date(clock_in_time));
@@ -26,15 +35,14 @@ const TaskCard = ({task, fetcher, updateTask, tasksData, setTasksData,  isAnyRun
     DONE: "Done",
   };
 
-  const handleStartClick = async () => { 
+  const handleStartClick = async () => {
     const inTime = new Date();
-    updateTask(id, {is_running: true, clock_in_time: inTime.toISOString()});
+    updateTask(id, { is_running: true, clock_in_time: inTime.toISOString() });
     setIsRunning(true);
     setRunningTask(id);
     setStartTime(inTime);
     // stopAllTasks(id);
-    clockIn(id, inTime)
-    
+    clockIn(id, inTime);
   };
 
   const handleStopClick = async () => {
@@ -43,47 +51,56 @@ const TaskCard = ({task, fetcher, updateTask, tasksData, setTasksData,  isAnyRun
       is_running: false,
       clock_in_time: null,
       time_spent: Math.floor(time_spent + (outTime - startTime) / 1000.0),
-    }
+    };
     updateTask(id, newTaskData);
     setIsRunning(false);
     clockOut(id, outTime);
   };
 
   const handleArrowDownClick = async (e) => {
-    updateTask(id, {priority: currentPriority - 1});
-    setCurrentPriority(currentPriority - 1)
+    updateTask(id, { priority: currentPriority - 1 });
+    setCurrentPriority(currentPriority - 1);
     decrementPriority(id);
   };
 
   const handleArrowUpClick = async (e) => {
-    updateTask(id, {priority: currentPriority + 1});
-    setCurrentPriority(currentPriority + 1)
+    updateTask(id, { priority: currentPriority + 1 });
+    setCurrentPriority(currentPriority + 1);
     incrementPriority(id);
   };
 
   const handleDeleteTask = async (e) => {
-    const updatedTasks = tasksData.filter(task => task.id !== id);
-    setTasksData(updatedTasks); 
+    const updatedTasks = tasksData.filter((task) => task.id !== id);
+    setTasksData(updatedTasks);
     await deleteTask(id);
   };
 
   const handleTaskDone = async (e) => {
+    const outTime = new Date();
     setCurrentTaskStatus("DONE");
     setIsRunning(false);
-    setTaskStatus(id, "DONE");
-    const newTaskData = {
-      is_running: false,
-      clock_in_time: null,
-      time_spent: Math.floor(time_spent + (outTime - startTime) / 1000.0),
-      status: "DONE"
+    let newTaskData = {};
+
+    if (isRunning && isAnyRunning && runningTask === task.id) {
+      newTaskData = {
+        is_running: false,
+        clock_in_time: null,
+        time_spent: Math.floor(time_spent + (outTime - startTime) / 1000.0),
+        status: "DONE",
+      };
+    } else {
+      newTaskData = {
+        status: "DONE",
+      };
     }
+    setTaskStatus(id, "DONE");
     updateTask(id, newTaskData);
   };
 
   const handleTaskInProgress = async (e) => {
     setCurrentTaskStatus("IN_PROGRESS");
     setTaskStatus(id, "IN_PROGRESS");
-    updateTask(id, {status: "IN_PROGRESS"});
+    updateTask(id, { status: "IN_PROGRESS" });
   };
 
   useEffect(() => {
@@ -92,7 +109,6 @@ const TaskCard = ({task, fetcher, updateTask, tasksData, setTasksData,  isAnyRun
       handleStopClick(null);
     }
   }, [isAnyRunning, runningTask, task.id]);
-  
 
   useEffect(() => {
     let intervalId;
@@ -188,7 +204,7 @@ const TaskCard = ({task, fetcher, updateTask, tasksData, setTasksData,  isAnyRun
                   className="btn start-button"
                   type="button"
                   style={{
-                    background: isRunning? "rgb(115 0 0 / 86%)" : "#186f65",
+                    background: isRunning ? "rgb(115 0 0 / 86%)" : "#186f65",
                     color: "#fce09b",
                     marginLeft: 39,
                     minWidth: 75,
