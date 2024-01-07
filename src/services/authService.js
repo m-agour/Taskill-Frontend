@@ -14,10 +14,7 @@ const setUserData = (data) => {
     last_name: data.last_name,
     token: data.token,
   };
-  Cookies.set("user", JSON.stringify(user_data), {
-    secure: true,
-    sameSite: "strict",
-  });
+  Cookies.set("user", JSON.stringify(user_data));
 };
 
 const getUserData = () => {
