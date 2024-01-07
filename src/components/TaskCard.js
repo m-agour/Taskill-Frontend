@@ -71,8 +71,13 @@ const TaskCard = ({task, fetcher, updateTask, tasksData, setTasksData,  isAnyRun
     setCurrentTaskStatus("DONE");
     setIsRunning(false);
     setTaskStatus(id, "DONE");
-    updateTask(id, {status: "DONE"});
-
+    const newTaskData = {
+      is_running: false,
+      clock_in_time: null,
+      time_spent: Math.floor(time_spent + (outTime - startTime) / 1000.0),
+      status: "DONE"
+    }
+    updateTask(id, newTaskData);
   };
 
   const handleTaskInProgress = async (e) => {
