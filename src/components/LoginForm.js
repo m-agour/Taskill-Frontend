@@ -55,7 +55,7 @@ const LoginForm = () => {
             onChange={handleChange}
             required
           />
-          <button type="submit" className="btn register-button">
+          <button type="submit" className="btn login-button">
             Login
           </button>
         </form>

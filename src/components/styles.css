@@ -20,29 +20,44 @@
   color: white;
 }
 
+.auth-main-div {
+  align-content: center;
+  text-align: center;
+  margin-bottom: 50px;
+  color: white;
+}
+
 .register-div {
   max-width: 450px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 48px;
+  padding-right: 48px;
   padding-bottom: 10px;
   padding-top: 2px;
   background: rgb(245, 253, 255);
-  border-radius: 18px;
-  background: #0766AD;
-  box-shadow: 4 40px 80px rgba(5, 5, 5, 0.219); /* Add a shadow */
-
+  border-radius: 10px;
+  background: #4079a5;
+  box-shadow: -5px 10px 2px;
 }
 
 .form-text {
   color: #C5E898;
-  font-size: 20px;
+  font-size: 25px;
   font-family: "Trebuchet MS", sans-serif;
 }
 
 
 .register-button {
   margin-top: 40px;
-  margin-left: 150px;
+  margin-left: 130px;
+  margin-bottom: 40px;
+  font-size: 25px;
+  background: #C5E898;
+  color: #363062;
+}
+
+.login-button {
+  margin-top: 40px;
+  margin-left: 140px;
   margin-bottom: 40px;
   font-size: 25px;
   background: #C5E898;
@@ -50,6 +65,10 @@
 }
 
 .register-button:hover {
+  background: #363062;
+  color: #C5E898;
+}
+.login-button:hover {
   background: #363062;
   color: #C5E898;
 }

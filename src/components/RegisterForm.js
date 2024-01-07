@@ -33,8 +33,8 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="container">
-      <div className="container mt-5 register-div">
+    <div className="container ">
+      <div className="container mt-5 register-div ">
         <div className="register-header-div">
           <h2 className="form-header"> Register</h2>
         </div>
