@@ -37,11 +37,13 @@ const TaskCard = ({
 
   const handleStartClick = async () => {
     const inTime = new Date();
-    updateTask(id, { is_running: true, clock_in_time: inTime.toISOString() });
+    if (task.status === "TODO") {
+      handleTaskInProgress();
+    }
+    updateTask(id, { is_running: true, clock_in_time: inTime.toISOString(), status: "IN_PROGRESS" });
     setIsRunning(true);
     setRunningTask(id);
     setStartTime(inTime);
-    // stopAllTasks(id);
     clockIn(id, inTime);
   };
 
@@ -139,9 +141,11 @@ const TaskCard = ({
         style={{
           background: isRunning
             ? "rgb(62, 219, 13)"
-            : currentTaskStatus != "DONE"
+            : currentTaskStatus === "DONE"
+            ? "rgb(182 183 201)"
+            : currentTaskStatus === "IN_PROGRESS"
             ? "rgb(238, 147, 34)"
-            : "rgb(182 183 201)",
+            : "#ffd078",
           width: "100%",
           minWidth: "100%",
           maxWidth: "100%",
@@ -160,10 +164,11 @@ const TaskCard = ({
             <h4
               style={{
                 textAlign: "left",
-                fontSize: 19,
+                fontSize: 20,
                 paddingLeft: 18,
+                paddingBottom: "3px",
                 paddingTop: "2px",
-                color: "darkblue",
+                color: "#2e1393",
               }}
             >
               {title}
@@ -192,7 +197,7 @@ const TaskCard = ({
                   className="text-start d-inline-block"
                   style={{
                     fontFamily: "Alatsi, sans-serif",
-                    color: "rgb(119,18,18)",
+                    color: "rgb(100,18,108)",
                     minWidth: "78px",
                   }}
                 >
